@@ -54,28 +54,6 @@ export class App extends Component {
       ),
     }));
   };
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   const name = e.target.name.value;
-  //   const number = e.target.number.value;
-
-  //   const normalizedName = name.toLowerCase();
-
-  //   if (this.isInContacts(normalizedName)) {
-  //     alert(`${name} is already in Contacts`);
-  //     return;
-  //   }
-  //   this.setState(prevState => ({
-  //     contacts: [
-  //       ...prevState.contacts,
-  //       {
-  //         name,
-  //         number,
-  //         id: nanoid(),
-  //       },
-  //     ],
-  //   }));
-  // };
 
   render() {
     const normalizedFilter = this.state.filter.toLowerCase();
