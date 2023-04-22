@@ -1,8 +1,10 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { ContactForm } from './ContactForm';
-import { Filter } from './Filter';
-import { ContactList } from './ContactList';
+import { ContactForm } from '../ContactForm';
+import { Filter } from '../Filter';
+import { ContactList } from '../ContactList';
+import { GlobalStyle } from '../GlobalStyles';
+import { Container, Title } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -61,13 +63,14 @@ export class App extends Component {
       item.name.toLowerCase().includes(normalizedFilter)
     );
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <Container>
+        <GlobalStyle />
+        <Title>Phonebook</Title>
         <ContactForm addContact={this.addContact} />
-        <h1>Contacts</h1>
+        <Title>Contacts</Title>
         <Filter value={this.state.filter} onChange={this.handleInput} />
         <ContactList contacts={visibleContacts} onDelete={this.deleteContact} />
-      </div>
+      </Container>
     );
   }
 }
